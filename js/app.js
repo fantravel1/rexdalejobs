@@ -182,40 +182,52 @@
         theme.init();
 
         try {
-            const response = await fetch('data/businesses.json');
+            // Try multiple paths for data file (handles different deployment scenarios)
+            let response = await fetch('data/businesses.json');
+            if (!response.ok) {
+                response = await fetch('./data/businesses.json');
+            }
+            if (!response.ok) {
+                response = await fetch('/data/businesses.json');
+            }
             if (!response.ok) throw new Error('Failed to load data');
+
             const data = await response.json();
 
-            state.businesses = data.businesses;
-            state.categories = data.categories;
+            state.businesses = data.businesses || [];
+            state.categories = data.categories || [];
             state.filteredBusinesses = [...state.businesses];
 
-            // Render all components
-            renderCategories();
-            populateCategoryFilter();
-            renderFeaturedCarousel();
-            renderListings();
+            // Render all components with null checks
+            if (elements.categoryGrid) renderCategories();
+            if (elements.categoryFilter) populateCategoryFilter();
+            if (elements.featuredCarousel) renderFeaturedCarousel();
+            if (elements.listingsGrid) renderListings();
             updateFavoritesCount();
 
             // Setup event listeners
             setupEventListeners();
 
             // Hide loading screen
-            setTimeout(() => {
-                elements.loadingScreen.classList.add('hidden');
-            }, 300);
+            if (elements.loadingScreen) {
+                setTimeout(() => {
+                    elements.loadingScreen.classList.add('hidden');
+                }, 300);
+            }
 
             // Animate counters
             animateCounters();
 
         } catch (error) {
             console.error('Error loading data:', error);
-            elements.loadingScreen.innerHTML = `
-                <div style="text-align: center; padding: 2rem;">
-                    <p style="margin-bottom: 1rem;">Error loading data. Please refresh the page.</p>
-                    <button onclick="location.reload()" class="btn btn-primary">Refresh</button>
-                </div>
-            `;
+            if (elements.loadingScreen) {
+                elements.loadingScreen.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <p style="margin-bottom: 1rem;">Error loading data. Please refresh the page.</p>
+                        <button onclick="location.reload()" class="btn btn-primary">Refresh</button>
+                    </div>
+                `;
+            }
         }
     }
 
@@ -255,6 +267,8 @@
     // Featured Carousel
     // ============================================
     function renderFeaturedCarousel() {
+        if (!elements.featuredCarousel) return;
+
         // Get businesses with ratings or complete info
         const featured = state.businesses
             .filter(b => b.rating || (b.address && b.phone && b.services))
@@ -297,10 +311,12 @@
         });
 
         // Render dots
-        const numDots = Math.ceil(featured.length / 3);
-        elements.carouselDots.innerHTML = Array(numDots).fill(0).map((_, i) =>
-            `<button class="carousel-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
-        ).join('');
+        if (elements.carouselDots) {
+            const numDots = Math.ceil(featured.length / 3);
+            elements.carouselDots.innerHTML = Array(numDots).fill(0).map((_, i) =>
+                `<button class="carousel-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
+            ).join('');
+        }
     }
 
     function scrollCarousel(direction) {
@@ -320,6 +336,8 @@
     // Categories Rendering
     // ============================================
     function renderCategories(groupFilter = 'all') {
+        if (!elements.categoryGrid) return;
+
         const categoryCounts = {};
         state.businesses.forEach(b => {
             categoryCounts[b.category] = (categoryCounts[b.category] || 0) + 1;
@@ -355,21 +373,23 @@
             .join('');
 
         // Update show all button
-        const hiddenCount = sortedCategories.length - state.maxInitialCategories;
-        if (hiddenCount > 0 && groupFilter === 'all') {
-            elements.showAllCategories.innerHTML = state.showAllCategories
-                ? '<span>Show Less</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 15l-6-6-6 6"></path></svg>'
-                : `<span>Show All (+${hiddenCount})</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"></path></svg>`;
-            elements.showAllCategories.style.display = 'inline-flex';
-        } else {
-            elements.showAllCategories.style.display = 'none';
+        if (elements.showAllCategories) {
+            const hiddenCount = sortedCategories.length - state.maxInitialCategories;
+            if (hiddenCount > 0 && groupFilter === 'all') {
+                elements.showAllCategories.innerHTML = state.showAllCategories
+                    ? '<span>Show Less</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 15l-6-6-6 6"></path></svg>'
+                    : `<span>Show All (+${hiddenCount})</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"></path></svg>`;
+                elements.showAllCategories.style.display = 'inline-flex';
+            } else {
+                elements.showAllCategories.style.display = 'none';
+            }
         }
 
         // Add click handlers
         elements.categoryGrid.querySelectorAll('.category-card').forEach(card => {
             card.addEventListener('click', () => {
                 const category = card.dataset.category;
-                elements.categoryFilter.value = category;
+                if (elements.categoryFilter) elements.categoryFilter.value = category;
                 state.filters.category = category;
                 filterBusinesses();
                 scrollToSection('#directory');
@@ -397,6 +417,8 @@
     // Business Listings
     // ============================================
     function renderListings() {
+        if (!elements.listingsGrid) return;
+
         const startIndex = (state.currentPage - 1) * state.itemsPerPage;
         const endIndex = startIndex + state.itemsPerPage;
         const pageBusinesses = state.filteredBusinesses.slice(startIndex, endIndex);
@@ -414,8 +436,8 @@
                     <p class="no-results-text">Try adjusting your search or filter criteria</p>
                 </div>
             `;
-            elements.resultsCount.textContent = '0';
-            elements.pagination.innerHTML = '';
+            if (elements.resultsCount) elements.resultsCount.textContent = '0';
+            if (elements.pagination) elements.pagination.innerHTML = '';
             return;
         }
 
@@ -484,12 +506,14 @@
             `;
         }).join('');
 
-        elements.resultsCount.textContent = state.filteredBusinesses.length.toLocaleString();
+        if (elements.resultsCount) elements.resultsCount.textContent = state.filteredBusinesses.length.toLocaleString();
         renderPagination();
         setupCardListeners();
     }
 
     function setupCardListeners() {
+        if (!elements.listingsGrid) return;
+
         // Card click to open modal
         elements.listingsGrid.querySelectorAll('.business-card').forEach(card => {
             card.addEventListener('click', (e) => {
