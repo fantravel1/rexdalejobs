@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rexdale Business Directory - Your complete guide to 800+ local businesses in Rexdale, Etobicoke. Find restaurants, healthcare, automotive services, and more.">
+    <meta name="keywords" content="Rexdale, Etobicoke, Toronto, business directory, local businesses, restaurants, healthcare, automotive, services">
+    <meta name="author" content="RexdaleJobs.com">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rexdalejobs.com/">
+    <meta property="og:title" content="Rexdale Business Directory | 800+ Local Businesses">
+    <meta property="og:description" content="Discover local businesses in Rexdale, Etobicoke. Restaurants, healthcare, automotive, professional services and more.">
+    <meta property="og:image" content="https://rexdalejobs.com/images/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rexdale Business Directory">
+    <meta name="twitter:description" content="Your complete guide to 800+ local businesses in Rexdale, Etobicoke.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rexdalejobs.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Rexdale Business Directory | 800+ Local Businesses in Etobicoke</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rexdale Business Directory",
+        "url": "https://rexdalejobs.com",
+        "description": "Complete business directory for Rexdale, Etobicoke with 800+ local businesses",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://rexdalejobs.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">R</span>
+                    <span class="logo-text">Rexdale<span class="logo-accent">Directory</span></span>
+                </a>
+                <nav class="nav">
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="#categories" class="mobile-nav-link">Categories</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Rexdale</h1>
+                <p class="hero-subtitle">Your complete guide to <strong>800+ local businesses</strong> in Rexdale, Etobicoke</p>
+
+                <!-- Search Box -->
+                <div class="search-wrapper">
+                    <div class="search-box">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search businesses, services, or categories..." autocomplete="off">
+                        <button class="search-clear" id="clearSearch" aria-label="Clear search">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 6L6 18M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalBusinesses">800+</span>
+                        <span class="stat-label">Businesses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalCategories">200+</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="section categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Explore businesses across all major categories</p>
+            </div>
+
+            <div class="category-grid" id="categoryGrid">
+                <!-- Categories will be dynamically loaded -->
+            </div>
+
+            <div class="show-more-wrapper">
+                <button class="btn btn-secondary" id="showAllCategories">
+                    Show All Categories
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings -->
+    <section class="section featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">All Businesses</h2>
+                <p class="section-subtitle">Browse the complete directory</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="categoryFilter" class="filter-label">Category</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Sort by</label>
+                    <select id="sortFilter" class="filter-select">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="category">Category</option>
+                    </select>
+                </div>
+                <div class="results-count">
+                    <span id="resultsCount">0</span> businesses found
+                </div>
+            </div>
+
+            <!-- Business Listings -->
+            <div class="listings-grid" id="listingsGrid">
+                <!-- Listings will be dynamically loaded -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">About Rexdale</h2>
+                    <p>Rexdale is a vibrant, multicultural neighborhood in the northwest corner of Etobicoke, Toronto. Known for its diverse community and thriving local businesses, Rexdale offers everything from authentic international cuisine to essential services.</p>
+                    <p>Our directory aims to connect residents and visitors with the wide array of businesses that make Rexdale unique. From family-owned restaurants serving cuisines from around the world to professional services and healthcare providers, you'll find it all here.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Local Focus</h3>
+                                <p>Exclusively featuring Rexdale and nearby Etobicoke businesses</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Community Driven</h3>
+                                <p>Supporting our local economy and small businesses</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Always Updated</h3>
+                                <p>Regularly maintained with current business information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2 class="section-title">Have a business to add?</h2>
+                <p>Help us keep this directory comprehensive and up-to-date. If you know of a business that should be listed, or if you need to update existing information, please reach out.</p>
+                <a href="mailto:hello@rexdalejobs.com" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">R</span>
+                        <span class="logo-text">Rexdale<span class="logo-accent">Directory</span></span>
+                    </a>
+                    <p class="footer-tagline">Your complete guide to local businesses in Rexdale, Etobicoke.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#categories">Categories</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Popular Categories</h4>
+                    <a href="#" data-category="FOOD & RESTAURANTS">Restaurants</a>
+                    <a href="#" data-category="HEALTH & MEDICAL">Healthcare</a>
+                    <a href="#" data-category="GAS STATIONS & AUTOMOTIVE">Automotive</a>
+                    <a href="#" data-category="RETAIL & SHOPPING">Shopping</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RexdaleJobs.com. All rights reserved.</p>
+                <p class="footer-disclaimer">Information provided as a community resource. Please verify details directly with businesses.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"></path>
+        </svg>
+    </button>
+
+    <!-- Business Detail Modal -->
+    <div class="modal" id="businessModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
