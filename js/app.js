@@ -716,11 +716,13 @@
                 }
             }
 
-            // Area filter
+            // Area/Neighborhood filter
             if (state.filters.area) {
                 const area = state.filters.area.toLowerCase();
+                const neighborhood = (business.neighborhood || '').toLowerCase();
                 const address = (business.address || '').toLowerCase();
-                if (!address.includes(area)) {
+                // Match either neighborhood field or address contains area name
+                if (!neighborhood.includes(area) && !address.includes(area)) {
                     return false;
                 }
             }
