@@ -1,276 +1,753 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rexdale Business Directory - Your complete guide to 800+ local businesses in Rexdale, Etobicoke. Find restaurants, healthcare, automotive services, and more.">
-    <meta name="keywords" content="Rexdale, Etobicoke, Toronto, business directory, local businesses, restaurants, healthcare, automotive, services">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Rexdale Business Directory - Your complete guide to 800+ local businesses in Rexdale, Etobicoke, Toronto. Find restaurants, healthcare, automotive services, halal options, and more.">
+    <meta name="keywords" content="Rexdale, Etobicoke, Toronto, business directory, local businesses, restaurants, healthcare, automotive, services, halal, multicultural, Caribbean, African, South Asian">
     <meta name="author" content="RexdaleJobs.com">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rexdalejobs.com/">
-    <meta property="og:title" content="Rexdale Business Directory | 800+ Local Businesses">
-    <meta property="og:description" content="Discover local businesses in Rexdale, Etobicoke. Restaurants, healthcare, automotive, professional services and more.">
+    <meta property="og:title" content="Rexdale Business Directory | 800+ Local Businesses in Etobicoke">
+    <meta property="og:description" content="Discover local businesses in Rexdale, Etobicoke. Restaurants, healthcare, automotive, professional services, halal options and more. Your complete community guide.">
     <meta property="og:image" content="https://rexdalejobs.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Rexdale Directory">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rexdale Business Directory">
-    <meta name="twitter:description" content="Your complete guide to 800+ local businesses in Rexdale, Etobicoke.">
+    <meta name="twitter:title" content="Rexdale Business Directory | 800+ Local Businesses">
+    <meta name="twitter:description" content="Your complete guide to local businesses in Rexdale, Etobicoke. Find exactly what you need.">
+    <meta name="twitter:image" content="https://rexdalejobs.com/images/og-image.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://rexdalejobs.com/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon.svg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Rexdale Dir">
 
-    <!-- Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
+
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-    <title>Rexdale Business Directory | 800+ Local Businesses in Etobicoke</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Structured Data -->
+    <title>Rexdale Business Directory | 800+ Local Businesses in Etobicoke, Toronto</title>
+
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Rexdale Business Directory",
+        "alternateName": "RexdaleJobs",
         "url": "https://rexdalejobs.com",
-        "description": "Complete business directory for Rexdale, Etobicoke with 800+ local businesses",
+        "description": "Complete business directory for Rexdale, Etobicoke with 800+ local businesses across 200+ categories",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://rexdalejobs.com/?search={search_term_string}",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://rexdalejobs.com/?search={search_term_string}"
+            },
             "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Rexdale Directory",
+            "url": "https://rexdalejobs.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://rexdalejobs.com/icons/icon-512.png"
+            }
         }
     }
     </script>
 
+    <!-- Structured Data - Local Business Directory -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Rexdale Business Directory",
+        "description": "A comprehensive directory of businesses in Rexdale, Etobicoke, Toronto",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Restaurants & Food",
+                "url": "https://rexdalejobs.com/#categories"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Healthcare & Medical",
+                "url": "https://rexdalejobs.com/#categories"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Automotive Services",
+                "url": "https://rexdalejobs.com/#categories"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://rexdalejobs.com/"
+        }]
+    }
+    </script>
+
+    <!-- Critical CSS Inline for Performance -->
+    <style>
+        :root{--primary:#2563eb;--bg:#ffffff;--text:#0f172a}
+        [data-theme="dark"]{--primary:#3b82f6;--bg:#0f172a;--text:#f8fafc}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+        .loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .3s}
+        .loading-screen.hidden{opacity:0;pointer-events:none}
+        .loader{width:48px;height:48px;border:3px solid #e2e8f0;border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <div class="container">
+            <p>Welcome to Rexdale's most comprehensive business directory with <strong>800+ local businesses</strong></p>
+            <button class="announcement-close" aria-label="Close announcement">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">
-                    <span class="logo-icon">R</span>
+                <a href="/" class="logo" aria-label="Rexdale Directory Home">
+                    <span class="logo-icon" aria-hidden="true">R</span>
                     <span class="logo-text">Rexdale<span class="logo-accent">Directory</span></span>
                 </a>
-                <nav class="nav">
+
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="#featured" class="nav-link">Featured</a>
                     <a href="#categories" class="nav-link">Categories</a>
+                    <a href="#directory" class="nav-link">Directory</a>
                     <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+
+                <div class="header-actions">
+                    <!-- Dark Mode Toggle -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Favorites Button -->
+                    <button class="favorites-btn" id="favoritesBtn" aria-label="View saved businesses" title="Saved businesses">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="favorites-count" id="favoritesCount">0</span>
+                    </button>
+
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <a href="#categories" class="mobile-nav-link">Categories</a>
-        <a href="#about" class="mobile-nav-link">About</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <nav role="navigation" aria-label="Mobile navigation">
+            <a href="#featured" class="mobile-nav-link">Featured</a>
+            <a href="#categories" class="mobile-nav-link">Categories</a>
+            <a href="#directory" class="mobile-nav-link">Directory</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Discover Rexdale</h1>
-                <p class="hero-subtitle">Your complete guide to <strong>800+ local businesses</strong> in Rexdale, Etobicoke</p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg-animated"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🇨🇦</span>
+                        <span>Serving Rexdale, Etobicoke since 2024</span>
+                    </div>
+                    <h1 class="hero-title" id="hero-title">
+                        Discover <span class="gradient-text">Rexdale</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Your complete guide to <strong>800+ local businesses</strong> across <strong>200+ categories</strong> in Toronto's most vibrant multicultural community
+                    </p>
 
-                <!-- Search Box -->
-                <div class="search-wrapper">
-                    <div class="search-box">
-                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="text" id="searchInput" class="search-input" placeholder="Search businesses, services, or categories..." autocomplete="off">
-                        <button class="search-clear" id="clearSearch" aria-label="Clear search">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 6L6 18M6 6l12 12"></path>
+                    <!-- Enhanced Search Box -->
+                    <div class="search-wrapper">
+                        <div class="search-box" role="search">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
                             </svg>
+                            <input
+                                type="search"
+                                id="searchInput"
+                                class="search-input"
+                                placeholder="Search businesses, services, or categories..."
+                                autocomplete="off"
+                                aria-label="Search businesses"
+                                aria-describedby="searchHelp"
+                            >
+                            <button class="search-clear" id="clearSearch" aria-label="Clear search" hidden>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                            <button class="search-voice" id="voiceSearch" aria-label="Voice search" title="Search by voice">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="search-help" id="searchHelp">Try: "halal restaurants", "dentist", "auto repair", "African food"</p>
+                        <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions"></div>
+                    </div>
+
+                    <!-- Quick Filter Tags -->
+                    <div class="quick-filters">
+                        <span class="quick-filter-label">Popular:</span>
+                        <button class="quick-filter-btn" data-filter="halal">Halal</button>
+                        <button class="quick-filter-btn" data-filter="restaurants">Restaurants</button>
+                        <button class="quick-filter-btn" data-filter="healthcare">Healthcare</button>
+                        <button class="quick-filter-btn" data-filter="automotive">Automotive</button>
+                        <button class="quick-filter-btn" data-filter="african">African</button>
+                        <button class="quick-filter-btn" data-filter="caribbean">Caribbean</button>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="stats">
+                        <div class="stat" data-aos="fade-up">
+                            <span class="stat-number" id="totalBusinesses">
+                                <span class="counter" data-target="800">0</span>+
+                            </span>
+                            <span class="stat-label">Businesses</span>
+                        </div>
+                        <div class="stat" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number" id="totalCategories">
+                                <span class="counter" data-target="200">0</span>+
+                            </span>
+                            <span class="stat-label">Categories</span>
+                        </div>
+                        <div class="stat" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat" data-aos="fade-up" data-aos-delay="300">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Featured Businesses Section -->
+        <section class="section featured-businesses-section" id="featured" aria-labelledby="featured-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Spotlight</span>
+                    <h2 class="section-title" id="featured-title">Featured Businesses</h2>
+                    <p class="section-subtitle">Discover top-rated local businesses recommended by the community</p>
+                </div>
+
+                <div class="featured-carousel" id="featuredCarousel">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button class="carousel-btn next" id="carouselNext" aria-label="Next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neighborhoods Section -->
+        <section class="section neighborhoods-section" aria-labelledby="neighborhoods-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Explore</span>
+                    <h2 class="section-title" id="neighborhoods-title">Explore Neighborhoods</h2>
+                    <p class="section-subtitle">Browse businesses by area within Rexdale and surrounding Etobicoke</p>
+                </div>
+
+                <div class="neighborhoods-grid">
+                    <button class="neighborhood-card" data-area="Rexdale">
+                        <div class="neighborhood-icon">📍</div>
+                        <h3>Rexdale</h3>
+                        <p>Central hub with diverse businesses</p>
+                    </button>
+                    <button class="neighborhood-card" data-area="Mount Olive">
+                        <div class="neighborhood-icon">🏠</div>
+                        <h3>Mount Olive</h3>
+                        <p>Family-friendly services</p>
+                    </button>
+                    <button class="neighborhood-card" data-area="Jamestown">
+                        <div class="neighborhood-icon">🌆</div>
+                        <h3>Jamestown</h3>
+                        <p>Community-focused businesses</p>
+                    </button>
+                    <button class="neighborhood-card" data-area="Thistletown">
+                        <div class="neighborhood-icon">🌳</div>
+                        <h3>Thistletown</h3>
+                        <p>Historic area services</p>
+                    </button>
+                    <button class="neighborhood-card" data-area="Albion">
+                        <div class="neighborhood-icon">🛣️</div>
+                        <h3>Albion Road</h3>
+                        <p>Main commercial strip</p>
+                    </button>
+                    <button class="neighborhood-card" data-area="Kipling">
+                        <div class="neighborhood-icon">🚇</div>
+                        <h3>Kipling Area</h3>
+                        <p>Transit-accessible businesses</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section categories-section" id="categories" aria-labelledby="categories-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Browse</span>
+                    <h2 class="section-title" id="categories-title">Browse by Category</h2>
+                    <p class="section-subtitle">Explore businesses across all major categories</p>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="category-tabs" role="tablist" aria-label="Category groups">
+                    <button class="category-tab active" role="tab" aria-selected="true" data-group="all">All</button>
+                    <button class="category-tab" role="tab" aria-selected="false" data-group="food">Food & Dining</button>
+                    <button class="category-tab" role="tab" aria-selected="false" data-group="services">Services</button>
+                    <button class="category-tab" role="tab" aria-selected="false" data-group="health">Health</button>
+                    <button class="category-tab" role="tab" aria-selected="false" data-group="shopping">Shopping</button>
+                </div>
+
+                <div class="category-grid" id="categoryGrid" role="list">
+                    <!-- Categories will be dynamically loaded -->
+                </div>
+
+                <div class="show-more-wrapper">
+                    <button class="btn btn-secondary" id="showAllCategories">
+                        <span>Show All Categories</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Directory Section -->
+        <section class="section directory-section" id="directory" aria-labelledby="directory-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Complete List</span>
+                    <h2 class="section-title" id="directory-title">Business Directory</h2>
+                    <p class="section-subtitle">Browse and search the complete directory</p>
+                </div>
+
+                <!-- Advanced Filter Controls -->
+                <div class="filter-controls">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="categoryFilter" class="filter-label">Category</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">All Categories</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sortFilter" class="filter-label">Sort by</label>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="name">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="category">Category</option>
+                                <option value="rating">Top Rated</option>
+                            </select>
+                        </div>
+                        <button class="filter-toggle-btn" id="advancedFilterToggle" aria-expanded="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            Filters
                         </button>
                     </div>
-                    <div class="search-suggestions" id="searchSuggestions"></div>
-                </div>
 
-                <!-- Quick Stats -->
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number" id="totalBusinesses">800+</span>
-                        <span class="stat-label">Businesses</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" id="totalCategories">200+</span>
-                        <span class="stat-label">Categories</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Free</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-bg"></div>
-    </section>
-
-    <!-- Popular Categories -->
-    <section class="section categories-section" id="categories">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Browse by Category</h2>
-                <p class="section-subtitle">Explore businesses across all major categories</p>
-            </div>
-
-            <div class="category-grid" id="categoryGrid">
-                <!-- Categories will be dynamically loaded -->
-            </div>
-
-            <div class="show-more-wrapper">
-                <button class="btn btn-secondary" id="showAllCategories">
-                    Show All Categories
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-                        <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Listings -->
-    <section class="section featured-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">All Businesses</h2>
-                <p class="section-subtitle">Browse the complete directory</p>
-            </div>
-
-            <!-- Filter Controls -->
-            <div class="filter-controls">
-                <div class="filter-group">
-                    <label for="categoryFilter" class="filter-label">Category</label>
-                    <select id="categoryFilter" class="filter-select">
-                        <option value="">All Categories</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label">Sort by</label>
-                    <select id="sortFilter" class="filter-select">
-                        <option value="name">Name (A-Z)</option>
-                        <option value="name-desc">Name (Z-A)</option>
-                        <option value="category">Category</option>
-                    </select>
-                </div>
-                <div class="results-count">
-                    <span id="resultsCount">0</span> businesses found
-                </div>
-            </div>
-
-            <!-- Business Listings -->
-            <div class="listings-grid" id="listingsGrid">
-                <!-- Listings will be dynamically loaded -->
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination" id="pagination"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about-section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">About Rexdale</h2>
-                    <p>Rexdale is a vibrant, multicultural neighborhood in the northwest corner of Etobicoke, Toronto. Known for its diverse community and thriving local businesses, Rexdale offers everything from authentic international cuisine to essential services.</p>
-                    <p>Our directory aims to connect residents and visitors with the wide array of businesses that make Rexdale unique. From family-owned restaurants serving cuisines from around the world to professional services and healthcare providers, you'll find it all here.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Local Focus</h3>
-                                <p>Exclusively featuring Rexdale and nearby Etobicoke businesses</p>
-                            </div>
+                    <!-- Advanced Filters (Collapsible) -->
+                    <div class="advanced-filters" id="advancedFilters" hidden>
+                        <div class="filter-chips">
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filterHalal" name="halal">
+                                <span>Halal Only</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filterRated" name="rated">
+                                <span>Has Ratings</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filterWebsite" name="website">
+                                <span>Has Website</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filterPhone" name="phone">
+                                <span>Has Phone</span>
+                            </label>
                         </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Community Driven</h3>
-                                <p>Supporting our local economy and small businesses</p>
-                            </div>
+                        <button class="clear-filters-btn" id="clearFilters">Clear All Filters</button>
+                    </div>
+
+                    <div class="filter-summary">
+                        <div class="results-count">
+                            <strong id="resultsCount">0</strong> businesses found
                         </div>
-                        <div class="feature">
-                            <div class="feature-icon">
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="gridViewBtn" aria-label="Grid view" title="Grid view">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
                                 </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h3>Always Updated</h3>
-                                <p>Regularly maintained with current business information</p>
-                            </div>
+                            </button>
+                            <button class="view-btn" id="listViewBtn" aria-label="List view" title="List view">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section contact-section" id="contact">
-        <div class="container">
-            <div class="contact-card">
-                <h2 class="section-title">Have a business to add?</h2>
-                <p>Help us keep this directory comprehensive and up-to-date. If you know of a business that should be listed, or if you need to update existing information, please reach out.</p>
-                <a href="mailto:hello@rexdalejobs.com" class="btn btn-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Contact Us
-                </a>
+                <!-- Active Filters Display -->
+                <div class="active-filters" id="activeFilters" hidden>
+                    <!-- Dynamically populated -->
+                </div>
+
+                <!-- Business Listings -->
+                <div class="listings-grid" id="listingsGrid" role="list">
+                    <!-- Skeleton loading -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination" role="navigation" aria-label="Pagination"></div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Community Section -->
+        <section class="section community-section" aria-labelledby="community-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Community</span>
+                    <h2 class="section-title" id="community-title">Rexdale Community</h2>
+                    <p class="section-subtitle">A diverse, vibrant neighborhood with businesses from around the world</p>
+                </div>
+
+                <div class="community-grid">
+                    <div class="community-stat">
+                        <div class="community-stat-icon">🌍</div>
+                        <div class="community-stat-number">50+</div>
+                        <div class="community-stat-label">Countries Represented</div>
+                    </div>
+                    <div class="community-stat">
+                        <div class="community-stat-icon">🍽️</div>
+                        <div class="community-stat-number">100+</div>
+                        <div class="community-stat-label">Restaurants & Eateries</div>
+                    </div>
+                    <div class="community-stat">
+                        <div class="community-stat-icon">🏥</div>
+                        <div class="community-stat-number">75+</div>
+                        <div class="community-stat-label">Healthcare Providers</div>
+                    </div>
+                    <div class="community-stat">
+                        <div class="community-stat-icon">🛒</div>
+                        <div class="community-stat-number">150+</div>
+                        <div class="community-stat-label">Retail & Services</div>
+                    </div>
+                </div>
+
+                <div class="cuisine-tags">
+                    <h3>Cuisines & Cultures</h3>
+                    <div class="tags-cloud">
+                        <span class="cuisine-tag">African</span>
+                        <span class="cuisine-tag">Caribbean</span>
+                        <span class="cuisine-tag">South Asian</span>
+                        <span class="cuisine-tag">Middle Eastern</span>
+                        <span class="cuisine-tag">Somali</span>
+                        <span class="cuisine-tag">Ethiopian</span>
+                        <span class="cuisine-tag">Jamaican</span>
+                        <span class="cuisine-tag">Indian</span>
+                        <span class="cuisine-tag">Pakistani</span>
+                        <span class="cuisine-tag">Italian</span>
+                        <span class="cuisine-tag">Chinese</span>
+                        <span class="cuisine-tag">Vietnamese</span>
+                        <span class="cuisine-tag">Halal</span>
+                        <span class="cuisine-tag">West Indian</span>
+                        <span class="cuisine-tag">Nigerian</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="section-badge">About Us</span>
+                        <h2 class="section-title" id="about-title">About Rexdale Directory</h2>
+                        <p class="about-lead">Rexdale is a vibrant, multicultural neighborhood in the northwest corner of Etobicoke, Toronto. Known for its diverse community and thriving local businesses, Rexdale offers everything from authentic international cuisine to essential services.</p>
+                        <p>Our directory aims to connect residents and visitors with the wide array of businesses that make Rexdale unique. From family-owned restaurants serving cuisines from around the world to professional services and healthcare providers, you'll find it all here.</p>
+
+                        <div class="about-features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Local Focus</h3>
+                                    <p>Exclusively featuring Rexdale and nearby Etobicoke businesses</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Community Driven</h3>
+                                    <p>Supporting our local economy and small businesses</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Always Updated</h3>
+                                    <p>Regularly maintained with current business information</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Privacy Focused</h3>
+                                    <p>No tracking, no ads, just helpful information</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section newsletter-section" aria-labelledby="newsletter-title">
+            <div class="container">
+                <div class="newsletter-card">
+                    <div class="newsletter-content">
+                        <h2 class="section-title" id="newsletter-title">Stay Updated</h2>
+                        <p>Get notified about new businesses, special offers, and community updates in Rexdale.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                            <button type="submit" class="btn btn-primary">
+                                Subscribe
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-badge">Get in Touch</span>
+                        <h2 class="section-title" id="contact-title">Contact Us</h2>
+                        <p>Have a business to add? Found an error? We'd love to hear from you.</p>
+
+                        <div class="contact-methods">
+                            <a href="mailto:hello@rexdalejobs.com" class="contact-method">
+                                <div class="contact-method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>hello@rexdalejobs.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Submit a Business</h3>
+                        <p>Help us grow the directory by submitting businesses you know about.</p>
+                        <a href="mailto:hello@rexdalejobs.com?subject=New Business Submission" class="btn btn-primary btn-block">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Submit Business
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo">
-                        <span class="logo-icon">R</span>
+                        <span class="logo-icon" aria-hidden="true">R</span>
                         <span class="logo-text">Rexdale<span class="logo-accent">Directory</span></span>
                     </a>
-                    <p class="footer-tagline">Your complete guide to local businesses in Rexdale, Etobicoke.</p>
+                    <p class="footer-tagline">Your complete guide to local businesses in Rexdale, Etobicoke, Toronto.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
+                    <a href="#featured">Featured</a>
                     <a href="#categories">Categories</a>
+                    <a href="#directory">Directory</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -280,24 +757,31 @@
                     <a href="#" data-category="HEALTH & MEDICAL">Healthcare</a>
                     <a href="#" data-category="GAS STATIONS & AUTOMOTIVE">Automotive</a>
                     <a href="#" data-category="RETAIL & SHOPPING">Shopping</a>
+                    <a href="#" data-category="PROFESSIONAL SERVICES">Professional</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="sitemap.xml">Sitemap</a>
+                    <a href="#" id="installApp">Install App</a>
+                    <a href="#" data-action="report">Report an Issue</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 RexdaleJobs.com. All rights reserved.</p>
+                <p>&copy; 2025 RexdaleJobs.com. All rights reserved. Made with ❤️ in Rexdale.</p>
                 <p class="footer-disclaimer">Information provided as a community resource. Please verify details directly with businesses.</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 15l-6-6-6 6"></path>
         </svg>
     </button>
 
     <!-- Business Detail Modal -->
-    <div class="modal" id="businessModal">
+    <div class="modal" id="businessModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">
@@ -311,6 +795,37 @@
         </div>
     </div>
 
+    <!-- Favorites Panel -->
+    <div class="favorites-panel" id="favoritesPanel" aria-labelledby="favoritesTitle">
+        <div class="favorites-header">
+            <h3 id="favoritesTitle">Saved Businesses</h3>
+            <button class="favorites-close" id="favoritesClose" aria-label="Close favorites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="favorites-body" id="favoritesBody">
+            <!-- Dynamically populated -->
+        </div>
+    </div>
+    <div class="favorites-overlay" id="favoritesOverlay"></div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Scripts -->
     <script src="js/app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>
 </body>
 </html>

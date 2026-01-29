@@ -1,0 +1,69 @@
+{
+  "name": "Rexdale Business Directory",
+  "short_name": "Rexdale Biz",
+  "description": "Discover 800+ local businesses in Rexdale, Etobicoke. Find restaurants, healthcare, automotive, retail, and professional services in your neighborhood.",
+  "start_url": "/rexdalejobs/",
+  "scope": "/rexdalejobs/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["business", "local", "directory", "shopping"],
+  "lang": "en-CA",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse Directory",
+      "short_name": "Directory",
+      "description": "Browse all businesses",
+      "url": "/rexdalejobs/#directory",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "View Categories",
+      "short_name": "Categories",
+      "description": "Browse by category",
+      "url": "/rexdalejobs/#categories",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "My Favorites",
+      "short_name": "Favorites",
+      "description": "View saved businesses",
+      "url": "/rexdalejobs/?favorites=true",
+      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Rexdale Business Directory"
+    },
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Rexdale Business Directory"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
