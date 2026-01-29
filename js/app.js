@@ -138,6 +138,19 @@
         cancelSubmitModal: $('#cancelSubmitModal'),
         submitBusinessForm: $('#submitBusinessForm'),
 
+        // Quick Info Modal
+        infoModal: $('#infoModal'),
+        closeInfoModal: $('#closeInfoModal'),
+        cancelInfoModal: $('#cancelInfoModal'),
+        infoForm: $('#infoForm'),
+        infoModalBusiness: $('#infoModalBusiness'),
+        infoBusinessName: $('#infoBusinessName'),
+        infoBusinessCategory: $('#infoBusinessCategory'),
+        infoMissingFields: $('#infoMissingFields'),
+        infoPhoneGroup: $('#infoPhoneGroup'),
+        infoAddressGroup: $('#infoAddressGroup'),
+        infoWebsiteGroup: $('#infoWebsiteGroup'),
+
         // Favorites panel
         favoritesPanel: $('#favoritesPanel'),
         favoritesBody: $('#favoritesBody'),
@@ -457,6 +470,13 @@
             if (business.halal_status) tags.push({ text: 'Halal', class: 'halal' });
             if (business.rating) tags.push({ text: business.rating.split(' ')[0], class: 'rated' });
 
+            // Check for missing info
+            const missingInfo = [];
+            if (!business.phone) missingInfo.push('phone');
+            if (!business.address) missingInfo.push('address');
+            if (!business.website) missingInfo.push('website');
+            const hasMissingInfo = missingInfo.length > 0;
+
             return `
                 <article class="business-card" data-id="${state.businesses.indexOf(business)}">
                     <div class="business-card-header">
@@ -502,13 +522,25 @@
                             ` : ''}
                         </div>
                     </div>
-                    ${tags.length > 0 ? `
-                        <div class="business-card-footer">
-                            <div class="business-tags">
-                                ${tags.map(tag => `<span class="business-tag ${tag.class}">${escapeHtml(tag.text)}</span>`).join('')}
-                            </div>
+                    <div class="business-card-footer">
+                        <div class="business-tags">
+                            ${tags.map(tag => `<span class="business-tag ${tag.class}">${escapeHtml(tag.text)}</span>`).join('')}
                         </div>
-                    ` : ''}
+                        ${hasMissingInfo ? `
+                            <button class="submit-info-btn"
+                                    data-business="${escapeHtml(business.name)}"
+                                    data-category="${escapeHtml(business.category)}"
+                                    data-missing="${missingInfo.join(',')}"
+                                    title="Help us complete this listing">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                Add Info
+                            </button>
+                        ` : ''}
+                    </div>
                 </article>
             `;
         }).join('');
@@ -524,8 +556,8 @@
         // Card click to open modal
         elements.listingsGrid.querySelectorAll('.business-card').forEach(card => {
             card.addEventListener('click', (e) => {
-                // Don't open modal if clicking favorite button
-                if (e.target.closest('.business-favorite-btn')) return;
+                // Don't open modal if clicking favorite or submit info button
+                if (e.target.closest('.business-favorite-btn') || e.target.closest('.submit-info-btn')) return;
                 const index = parseInt(card.dataset.id);
                 openBusinessModal(state.businesses[index]);
             });
@@ -540,6 +572,48 @@
                 btn.classList.toggle('active');
             });
         });
+
+        // Submit Info button clicks
+        elements.listingsGrid.querySelectorAll('.submit-info-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openInfoModal(btn.dataset.business, btn.dataset.category, btn.dataset.missing);
+            });
+        });
+    }
+
+    // Open Info Modal with pre-filled business info
+    function openInfoModal(businessName, category, missingFields) {
+        if (!elements.infoModal) return;
+
+        const missing = missingFields.split(',');
+
+        // Set business info
+        if (elements.infoModalBusiness) elements.infoModalBusiness.textContent = businessName;
+        if (elements.infoBusinessName) elements.infoBusinessName.value = businessName;
+        if (elements.infoBusinessCategory) elements.infoBusinessCategory.value = category;
+        if (elements.infoMissingFields) elements.infoMissingFields.value = missingFields;
+
+        // Show/hide fields based on what's missing
+        if (elements.infoPhoneGroup) {
+            elements.infoPhoneGroup.style.display = missing.includes('phone') ? 'block' : 'none';
+        }
+        if (elements.infoAddressGroup) {
+            elements.infoAddressGroup.style.display = missing.includes('address') ? 'block' : 'none';
+        }
+        if (elements.infoWebsiteGroup) {
+            elements.infoWebsiteGroup.style.display = missing.includes('website') ? 'block' : 'none';
+        }
+
+        // Reset form
+        elements.infoForm?.reset();
+        if (elements.infoBusinessName) elements.infoBusinessName.value = businessName;
+        if (elements.infoBusinessCategory) elements.infoBusinessCategory.value = category;
+        if (elements.infoMissingFields) elements.infoMissingFields.value = missingFields;
+
+        // Open modal
+        elements.infoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     function renderPagination() {
@@ -1432,6 +1506,48 @@
                     showToast('Business submitted successfully! We\'ll review it soon.', 'success');
                     form.reset();
                     closeSubmitModalFn();
+                } else {
+                    showToast('Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showToast('Something went wrong. Please try again.', 'error');
+            }
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+
+        // Quick Info Modal
+        const closeInfoModalFn = () => {
+            elements.infoModal?.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        elements.closeInfoModal?.addEventListener('click', closeInfoModalFn);
+        elements.cancelInfoModal?.addEventListener('click', closeInfoModalFn);
+        elements.infoModal?.querySelector('.modal-overlay')?.addEventListener('click', closeInfoModalFn);
+
+        // Info Form - submit via Formspree
+        elements.infoForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = 'Submitting...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    showToast('Thank you! Your info will help the community.', 'success');
+                    form.reset();
+                    closeInfoModalFn();
                 } else {
                     showToast('Something went wrong. Please try again.', 'error');
                 }
