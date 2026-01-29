@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://fantravel1.github.io/rexdalejobs/sitemap.xml
+Sitemap: https://rexdalejobs.com/sitemap.xml
 
 # Crawl-delay for politeness (optional)
 Crawl-delay: 1

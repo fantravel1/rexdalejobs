@@ -2,17 +2,17 @@
 // Version 2.0.0
 
 const CACHE_NAME = 'rexdale-directory-v2';
-const OFFLINE_URL = '/rexdalejobs/offline.html';
+const OFFLINE_URL = '/offline.html';
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
-  '/rexdalejobs/',
-  '/rexdalejobs/index.html',
-  '/rexdalejobs/css/style.css',
-  '/rexdalejobs/js/app.js',
-  '/rexdalejobs/data/businesses.json',
-  '/rexdalejobs/manifest.json',
-  '/rexdalejobs/offline.html'
+  '/',
+  '/index.html',
+  '/css/style.css',
+  '/js/app.js',
+  '/data/businesses.json',
+  '/manifest.json',
+  '/offline.html'
 ];
 
 // Install event - precache assets
@@ -152,8 +152,8 @@ self.addEventListener('push', (event) => {
     const data = event.data.json();
     const options = {
       body: data.body || 'New update from Rexdale Business Directory',
-      icon: '/rexdalejobs/icons/icon-192x192.png',
-      badge: '/rexdalejobs/icons/icon-72x72.png',
+      icon: '/icons/icon.svg',
+      badge: '/favicon.svg',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -177,7 +177,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/rexdalejobs/#directory')
+      clients.openWindow('/#directory')
     );
   }
 });
