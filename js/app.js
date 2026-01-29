@@ -131,6 +131,13 @@
         businessModal: $('#businessModal'),
         modalBody: $('#modalBody'),
 
+        // Submit Business Modal
+        submitModal: $('#submitModal'),
+        openSubmitModal: $('#openSubmitModal'),
+        closeSubmitModal: $('#closeSubmitModal'),
+        cancelSubmitModal: $('#cancelSubmitModal'),
+        submitBusinessForm: $('#submitBusinessForm'),
+
         // Favorites panel
         favoritesPanel: $('#favoritesPanel'),
         favoritesBody: $('#favoritesBody'),
@@ -1357,11 +1364,83 @@
             });
         });
 
-        // Newsletter form
-        elements.newsletterForm?.addEventListener('submit', (e) => {
+        // Newsletter form - submit via Formspree
+        elements.newsletterForm?.addEventListener('submit', async (e) => {
             e.preventDefault();
-            showToast('Thank you for subscribing!', 'success');
-            elements.newsletterForm.reset();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    showToast('Thank you for subscribing!', 'success');
+                    form.reset();
+                } else {
+                    showToast('Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showToast('Something went wrong. Please try again.', 'error');
+            }
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+
+        // Submit Business Modal
+        elements.openSubmitModal?.addEventListener('click', () => {
+            elements.submitModal?.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeSubmitModalFn = () => {
+            elements.submitModal?.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        elements.closeSubmitModal?.addEventListener('click', closeSubmitModalFn);
+        elements.cancelSubmitModal?.addEventListener('click', closeSubmitModalFn);
+
+        elements.submitModal?.querySelector('.modal-overlay')?.addEventListener('click', closeSubmitModalFn);
+
+        // Submit Business Form - submit via Formspree
+        elements.submitBusinessForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = 'Submitting...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    showToast('Business submitted successfully! We\'ll review it soon.', 'success');
+                    form.reset();
+                    closeSubmitModalFn();
+                } else {
+                    showToast('Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showToast('Something went wrong. Please try again.', 'error');
+            }
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         });
 
         // Cuisine tags
