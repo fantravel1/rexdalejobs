@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="6" fill="url(#grad)"/>
+  <g fill="white" transform="scale(0.0625) translate(0, 0)">
+    <rect x="140" y="180" width="232" height="220" rx="12"/>
+    <path d="M120 195 L256 100 L392 195 L380 210 L256 125 L132 210 Z"/>
+    <rect x="170" y="210" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="231" y="210" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="292" y="210" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="170" y="270" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="231" y="270" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="292" y="270" width="50" height="40" rx="4" fill="#2563eb"/>
+    <rect x="221" y="330" width="70" height="70" rx="6" fill="#1e40af"/>
+  </g>
+  <text x="16" y="23" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">R</text>
+</svg>
