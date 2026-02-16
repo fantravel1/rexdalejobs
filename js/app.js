@@ -933,6 +933,10 @@
         const businessIndex = state.businesses.indexOf(business);
         const isFavorite = state.favorites.includes(businessIndex);
 
+        // Generate business detail page URL
+        const businessSlug = slugify(`${business.name}-${business.neighborhood || 'rexdale'}`);
+        const businessUrl = `businesses/${businessSlug}.html`;
+
         elements.modalBody.innerHTML = `
             <div class="modal-header">
                 <span class="modal-category">${escapeHtml(business.category)}</span>
@@ -1052,13 +1056,20 @@
             ` : ''}
 
             <div class="modal-actions">
+                <a href="${businessUrl}" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    View Full Details
+                </a>
                 <button class="btn btn-secondary" id="modalFavoriteBtn" data-id="${businessIndex}">
                     <svg viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" width="18" height="18">
                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                     </svg>
                     ${isFavorite ? 'Saved' : 'Save'}
                 </button>
-                <button class="btn btn-primary" id="modalShareBtn">
+                <button class="btn btn-secondary" id="modalShareBtn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
                         <circle cx="18" cy="5" r="3"></circle>
                         <circle cx="6" cy="12" r="3"></circle>
