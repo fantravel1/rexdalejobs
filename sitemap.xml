@@ -7,49 +7,137 @@
   <!-- Homepage -->
   <url>
     <loc>https://rexdalejobs.com/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Jobs Hub Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Entry-Level Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/entry-level-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Warehouse Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/warehouse-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pearson Airport Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/pearson-airport-jobs.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Retail Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/retail-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Restaurant / Food Service Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/restaurant-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Security Guard Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/security-guard-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cleaning Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/cleaning-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Healthcare Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/healthcare-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Construction Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/construction-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Student Jobs Landing Page -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/student-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Directory Section -->
   <url>
     <loc>https://rexdalejobs.com/#directory</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <!-- Categories Section -->
   <url>
     <loc>https://rexdalejobs.com/#categories</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Neighborhoods Section -->
   <url>
     <loc>https://rexdalejobs.com/#neighborhoods</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Featured Section -->
   <url>
     <loc>https://rexdalejobs.com/#featured</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Contact Section -->
   <url>
     <loc>https://rexdalejobs.com/#contact</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
 
 </urlset>

@@ -2958,6 +2958,87 @@ input, select, textarea {
 }
 
 /* ============================================
+   Jobs Category Grid (Homepage)
+   ============================================ */
+.jobs-category-section {
+    background: var(--gray-50);
+}
+
+[data-theme="dark"] .jobs-category-section {
+    background: var(--gray-900);
+}
+
+.jobs-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.job-category-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .job-category-card {
+    background: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+.job-category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.job-category-icon {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-sm);
+}
+
+.job-category-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+}
+
+.job-category-card p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+}
+
+.job-category-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: auto;
+}
+
+.jobs-cta {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+@media (max-width: 640px) {
+    .jobs-category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
    Reduced Motion
    ============================================ */
 @media (prefers-reduced-motion: reduce) {

@@ -1,9 +1,10 @@
-# Robots.txt for Rexdale Business Directory
-# https://fantravel1.github.io/rexdalejobs/
+# Robots.txt for Rexdale Jobs & Business Directory
+# https://rexdalejobs.com/
 
 # Allow all crawlers
 User-agent: *
 Allow: /
+Allow: /jobs/
 
 # Sitemap location
 Sitemap: https://rexdalejobs.com/sitemap.xml
