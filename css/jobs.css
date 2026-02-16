@@ -857,9 +857,304 @@
     }
 }
 
-/* Print styles for landing pages */
+/* ============================================
+   Business Detail Pages
+   ============================================ */
+
+.business-hero {
+    padding: 100px 0 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.business-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.business-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    max-width: 600px;
+}
+
+.business-category {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 100px;
+    backdrop-filter: blur(4px);
+}
+
+.business-location {
+    font-size: 1rem;
+    opacity: 0.95;
+    margin-bottom: 0;
+}
+
+.business-details {
+    padding: 60px 0;
+}
+
+.business-content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.business-main h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.business-main h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.business-main p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.services-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 32px;
+}
+
+.services-list li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.services-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.business-contact {
+    background: var(--gray-50);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+[data-theme="dark"] .business-contact {
+    background: var(--gray-800);
+}
+
+.business-contact p {
+    margin-bottom: 12px;
+}
+
+.business-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.business-contact a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.business-contact a:hover {
+    text-decoration: underline;
+}
+
+.business-features {
+    margin-bottom: 32px;
+}
+
+.business-features ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0 0 0;
+}
+
+.business-features li {
+    padding: 8px 0;
+    color: var(--text-secondary);
+}
+
+.business-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.business-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+[data-theme="dark"] .business-card {
+    background: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+.business-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.btn-full {
+    width: 100%;
+    margin-bottom: 12px;
+    text-align: center;
+    display: inline-block;
+    padding: 12px 16px;
+}
+
+.btn-full:last-child {
+    margin-bottom: 0;
+}
+
+.rating-display {
+    text-align: center;
+}
+
+.rating-display .stars {
+    font-size: 1.5rem;
+    color: #fbbf24;
+    margin-bottom: 8px;
+}
+
+.rating-display p {
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.rating-display .text-sm {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.benefits-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.benefits-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.related-businesses {
+    padding: 60px 0;
+    background: var(--gray-50);
+    text-align: center;
+}
+
+[data-theme="dark"] .related-businesses {
+    background: var(--gray-900);
+}
+
+.related-businesses h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.related-businesses p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.business-cta {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+    color: white;
+    text-align: center;
+}
+
+.business-cta h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.business-cta p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .business-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .business-main h2 {
+        font-size: 1.5rem;
+    }
+
+    .business-hero h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print styles for business pages */
 @media print {
-    .landing-hero {
+    .landing-hero, .business-hero {
         background: #2563eb !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;

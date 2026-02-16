@@ -1858,6 +1858,49 @@ input, select, textarea {
     border-color: rgba(245, 158, 11, 0.3);
 }
 
+.business-name-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.business-name-link:hover .business-name {
+    color: var(--primary);
+}
+
+.business-card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.view-details-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: white;
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.view-details-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .view-details-btn:hover {
+    background: #3b82f6;
+}
+
 /* ============================================
    Pagination
    ============================================ */
