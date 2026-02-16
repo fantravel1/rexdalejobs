@@ -2971,20 +2971,20 @@ input, select, textarea {
 .jobs-category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-lg);
-    margin-top: var(--space-xl);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 .job-category-card {
     display: flex;
     flex-direction: column;
-    padding: var(--space-lg);
+    padding: var(--spacing-lg);
     background: var(--white);
     border-radius: var(--radius-xl);
     border: 1px solid var(--gray-200);
     text-decoration: none;
     color: var(--text-primary);
-    transition: all var(--transition-normal);
+    transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
 }
@@ -3001,27 +3001,27 @@ input, select, textarea {
 }
 
 .job-category-icon {
-    font-size: var(--text-3xl);
-    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
 }
 
 .job-category-card h3 {
-    font-size: var(--text-lg);
+    font-size: var(--font-size-lg);
     font-weight: 700;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--spacing-xs);
     color: var(--text-primary);
 }
 
 .job-category-card p {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-sm);
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
     flex-grow: 1;
 }
 
 .job-category-link {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-sm);
     font-weight: 600;
     color: var(--primary);
     margin-top: auto;
@@ -3029,7 +3029,7 @@ input, select, textarea {
 
 .jobs-cta {
     text-align: center;
-    margin-top: var(--space-2xl);
+    margin-top: var(--spacing-2xl);
 }
 
 @media (max-width: 640px) {
