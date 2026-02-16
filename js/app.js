@@ -477,6 +477,10 @@
             if (!business.website) missingInfo.push('website');
             const hasMissingInfo = missingInfo.length > 0;
 
+            // Generate slug for business detail page
+            const businessSlug = slugify(`${business.name}-${business.neighborhood || 'rexdale'}`);
+            const businessUrl = `businesses/${businessSlug}.html`;
+
             return `
                 <article class="business-card" data-id="${state.businesses.indexOf(business)}">
                     <div class="business-card-header">
@@ -490,7 +494,9 @@
                                 </svg>
                             </button>
                         </div>
-                        <h3 class="business-name">${escapeHtml(business.name)}</h3>
+                        <a href="${businessUrl}" class="business-name-link">
+                            <h3 class="business-name">${escapeHtml(business.name)}</h3>
+                        </a>
                     </div>
                     <div class="business-card-body">
                         <div class="business-info">
@@ -526,20 +532,23 @@
                         <div class="business-tags">
                             ${tags.map(tag => `<span class="business-tag ${tag.class}">${escapeHtml(tag.text)}</span>`).join('')}
                         </div>
-                        ${hasMissingInfo ? `
-                            <button class="submit-info-btn"
-                                    data-business="${escapeHtml(business.name)}"
-                                    data-category="${escapeHtml(business.category)}"
-                                    data-missing="${missingInfo.join(',')}"
-                                    title="Help us complete this listing">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                </svg>
-                                Add Info
-                            </button>
-                        ` : ''}
+                        <div class="business-card-actions">
+                            <a href="${businessUrl}" class="view-details-btn">View Details</a>
+                            ${hasMissingInfo ? `
+                                <button class="submit-info-btn"
+                                        data-business="${escapeHtml(business.name)}"
+                                        data-category="${escapeHtml(business.category)}"
+                                        data-missing="${missingInfo.join(',')}"
+                                        title="Help us complete this listing">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg>
+                                    Add Info
+                                </button>
+                            ` : ''}
+                        </div>
                     </div>
                 </article>
             `;
@@ -1601,6 +1610,16 @@
             return url;
         }
         return 'https://' + url;
+    }
+
+    function slugify(text) {
+        if (!text) return '';
+        return text
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
     }
 
     function scrollToSection(selector) {
