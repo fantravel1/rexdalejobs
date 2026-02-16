@@ -20,7 +20,9 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- Entry-Level Jobs Landing Page -->
+  <!-- ===== INDUSTRY JOB PAGES ===== -->
+
+  <!-- Entry-Level Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/entry-level-jobs-toronto.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -28,7 +30,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Warehouse Jobs Landing Page -->
+  <!-- Warehouse Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/warehouse-jobs-etobicoke.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -36,7 +38,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Pearson Airport Jobs Landing Page -->
+  <!-- Pearson Airport Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/pearson-airport-jobs.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -44,7 +46,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Retail Jobs Landing Page -->
+  <!-- Retail Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/retail-jobs-etobicoke.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -52,7 +54,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Restaurant / Food Service Jobs Landing Page -->
+  <!-- Restaurant Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/restaurant-jobs-etobicoke.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -60,7 +62,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Security Guard Jobs Landing Page -->
+  <!-- Security Guard Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/security-guard-jobs-toronto.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -68,7 +70,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Cleaning Jobs Landing Page -->
+  <!-- Cleaning Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/cleaning-jobs-toronto.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -76,7 +78,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Healthcare Jobs Landing Page -->
+  <!-- Healthcare Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/healthcare-jobs-toronto.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -84,7 +86,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Construction Jobs Landing Page -->
+  <!-- Construction Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/construction-jobs-toronto.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -92,7 +94,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Student Jobs Landing Page -->
+  <!-- Student Jobs -->
   <url>
     <loc>https://rexdalejobs.com/jobs/student-jobs-etobicoke.html</loc>
     <lastmod>2026-02-16</lastmod>
@@ -100,12 +102,222 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Remote / Work From Home Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/remote-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Factory / Manufacturing Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/factory-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Delivery Driver Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/delivery-driver-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Night Shift Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/night-shift-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Weekend Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/weekend-jobs-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Work From Home Customer Service -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/work-from-home-customer-service.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ===== LOCATION-SPECIFIC PAGES ===== -->
+
+  <!-- Jobs Near Humber College -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-near-humber-college.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Jobs Near Woodbine Mall -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-near-woodbine-mall.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Jobs Near Kipling Station -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-near-kipling-station.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Highway 27 Warehouse & Industrial Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/highway-27-warehouse-jobs.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Temp Agency Jobs -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/temp-agency-jobs-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ===== AUDIENCE-SPECIFIC PAGES ===== -->
+
+  <!-- Jobs for Newcomers -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-for-newcomers-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Jobs for Parents -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-for-parents-etobicoke.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Summer Jobs 2026 -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/summer-jobs-toronto-2026.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Jobs for Teens -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/jobs-for-teens-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ===== CERTIFICATION GUIDES ===== -->
+
+  <!-- Forklift Licence Ontario -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/how-to-get-forklift-licence-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Security Guard Licence Ontario -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/security-guard-licence-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Workplace Safety Certifications -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/workplace-safety-certifications-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- How to Become a PSW -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/how-to-become-psw-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Smart Serve Certification -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/smart-serve-certification-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== CAREER GUIDES ===== -->
+
+  <!-- Resume Tips -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/resume-tips-no-experience.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Interview Tips -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/interview-tips-entry-level.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Free Job Resources -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/free-job-resources-toronto.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Minimum Wage Ontario Guide -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/minimum-wage-ontario-guide.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Workers Rights Ontario -->
+  <url>
+    <loc>https://rexdalejobs.com/jobs/workers-rights-ontario.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== HOMEPAGE SECTIONS ===== -->
+
   <!-- Directory Section -->
   <url>
     <loc>https://rexdalejobs.com/#directory</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Categories Section -->
@@ -113,7 +325,7 @@
     <loc>https://rexdalejobs.com/#categories</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Neighborhoods Section -->
@@ -121,7 +333,7 @@
     <loc>https://rexdalejobs.com/#neighborhoods</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
 
   <!-- Featured Section -->
@@ -129,7 +341,7 @@
     <loc>https://rexdalejobs.com/#featured</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Contact Section -->
@@ -137,7 +349,7 @@
     <loc>https://rexdalejobs.com/#contact</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
 
 </urlset>

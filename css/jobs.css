@@ -550,6 +550,313 @@
     }
 }
 
+/* ============================================
+   Guide Page Components
+   Info boxes, step lists, checklists, resource cards
+   ============================================ */
+
+/* Info/callout boxes */
+.info-box {
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin: 24px 0;
+    border-left: 4px solid;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+.info-box.tip {
+    background: #f0fdf4;
+    border-color: var(--success);
+    color: #166534;
+}
+
+.info-box.warning {
+    background: #fffbeb;
+    border-color: var(--warning);
+    color: #92400e;
+}
+
+.info-box.cost {
+    background: #eff6ff;
+    border-color: var(--primary);
+    color: #1e40af;
+}
+
+.info-box.info {
+    background: #f8fafc;
+    border-color: var(--gray-400);
+    color: var(--gray-700);
+}
+
+[data-theme="dark"] .info-box.tip {
+    background: rgba(16, 185, 129, 0.1);
+    color: #6ee7b7;
+}
+
+[data-theme="dark"] .info-box.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fcd34d;
+}
+
+[data-theme="dark"] .info-box.cost {
+    background: rgba(37, 99, 235, 0.1);
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .info-box.info {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--gray-300);
+}
+
+.info-box strong {
+    font-weight: 700;
+    color: inherit;
+}
+
+.info-box p {
+    color: inherit;
+    margin-bottom: 8px;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Step-by-step lists */
+.step-list {
+    counter-reset: steps;
+    list-style: none;
+    padding-left: 0;
+    margin: 28px 0;
+}
+
+.step-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .step-list li {
+    border-color: var(--gray-700);
+}
+
+.step-list li:last-child {
+    border-bottom: none;
+}
+
+.step-list li::before {
+    content: counter(steps);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.step-list li strong {
+    color: var(--text-primary);
+}
+
+/* Checklist */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--success);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Resource link cards */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.resource-card {
+    display: block;
+    padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+[data-theme="dark"] .resource-card {
+    background: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+.resource-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.resource-card .resource-label {
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.resource-card h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.resource-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* Comparison table */
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 28px 0;
+    border: 1px solid var(--gray-200);
+    font-size: 0.9375rem;
+}
+
+[data-theme="dark"] .comparison-table {
+    border-color: var(--gray-700);
+}
+
+.comparison-table thead th {
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.comparison-table tbody td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+[data-theme="dark"] .comparison-table tbody td {
+    border-color: var(--gray-700);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: var(--gray-50);
+}
+
+[data-theme="dark"] .comparison-table tbody tr:nth-child(even) {
+    background: var(--gray-800);
+}
+
+.comparison-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Hub section headers for categorized hub */
+.hub-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 48px;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.hub-section-title:first-of-type {
+    margin-top: 32px;
+}
+
+.hub-section-desc {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for new components */
+@media (max-width: 640px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .step-list li {
+        gap: 12px;
+    }
+
+    .info-box {
+        padding: 16px 20px;
+    }
+}
+
 /* Print styles for landing pages */
 @media print {
     .landing-hero {
