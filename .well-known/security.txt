@@ -1,0 +1,7 @@
+# Security Policy for RexdaleJobs.com
+# https://securitytxt.org/
+
+Contact: mailto:info@kingstrust.ca
+Preferred-Languages: en
+Canonical: https://rexdalejobs.com/.well-known/security.txt
+Expires: 2027-02-26T00:00:00.000Z

@@ -1,0 +1,75 @@
+# RexdaleJobs.com
+
+> A free, community-driven local business directory and jobs resource hub for Rexdale, Etobicoke & Toronto, Ontario, Canada.
+
+## What This Site Is
+
+RexdaleJobs.com is a hyperlocal directory of 803 businesses and 35 job/career guide pages serving the Rexdale neighborhood and surrounding areas of Etobicoke, Toronto. The site helps residents find local businesses, discover job opportunities, and access career resources — all for free with no ads or tracking.
+
+## Key Facts
+
+- 803 local businesses listed across 201 categories
+- 7 neighborhoods covered: Rexdale, North Etobicoke, Etobicoke, Woodbine, Weston, Humber Summit, Jamestown
+- 35 job category and career guide pages
+- Covers entry-level, warehouse, airport, retail, healthcare, construction, security, cleaning, food service, remote, and student jobs
+- Includes Ontario certification guides (forklift, security guard, Smart Serve, PSW)
+- Includes resume tips, interview guides, minimum wage info, and free job resources
+- Located near Toronto Pearson International Airport (YYZ) and Humber College North Campus
+
+## Who This Site Serves
+
+- Job seekers in Rexdale, Etobicoke, and the Greater Toronto Area
+- Newcomers to Canada looking for entry-level employment
+- Students at Humber College looking for part-time work
+- Residents searching for local businesses and services
+- Anyone looking for no-experience-required jobs in Toronto
+
+## Business Categories (Top 10)
+
+1. Food & Restaurants (51 businesses)
+2. Retail & Shopping (35 businesses)
+3. Gas Stations & Automotive (27 businesses)
+4. Health & Medical (27 businesses)
+5. Personal Services (26 businesses)
+6. Religious Institutions (18 businesses)
+7. Jewelry Stores (17 businesses)
+8. Other Services (16 businesses)
+9. Financial Services (14 businesses)
+10. Government & Community Services (12 businesses)
+
+## Job Categories Covered
+
+- Entry-Level & No Experience Jobs
+- Warehouse & Logistics Jobs
+- Pearson Airport Jobs
+- Retail & Mall Jobs
+- Food Service & Restaurant Jobs
+- Security Guard Jobs
+- Cleaning & Janitorial Jobs
+- Healthcare Support Jobs
+- Construction & Trades Jobs
+- Student & Youth Jobs
+- Remote & Work From Home Jobs
+- Factory & Manufacturing Jobs
+- Delivery Driver Jobs
+- Night Shift Jobs
+- Weekend & Part-Time Jobs
+- Forklift Licence Guide (Ontario)
+- Security Guard Licence Guide
+- Smart Serve Certification Guide
+- PSW Certification Guide
+- Resume Tips (No Experience)
+- Interview Tips
+- Minimum Wage Ontario Guide
+- Free Job Resources
+- Temp Agency Guide
+- Summer Jobs 2026
+
+## Contact
+
+- Website: https://rexdalejobs.com
+- Email: info@kingstrust.ca
+
+## Documentation
+
+- Full documentation: https://rexdalejobs.com/llms-full.txt

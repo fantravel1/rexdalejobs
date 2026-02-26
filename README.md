@@ -49,11 +49,20 @@ The site is entirely static HTML/CSS/JS hosted on GitHub Pages with no backend, 
 - Offline fallback page
 
 ### SEO & AEO (Answer Engine Optimization)
-- **838 crawlable URLs** in the sitemap
-- schema.org structured data: `LocalBusiness`, `Organization`, `WebSite`, `BreadcrumbList`, `ItemList`, `FAQPage`
-- Open Graph and Twitter Card meta tags on every page
+- **839 crawlable URLs** in the sitemap (zero duplicates)
+- schema.org structured data on every page: `LocalBusiness`, `Organization`, `WebSite`, `BreadcrumbList`, `ItemList`, `FAQPage`
+- Full `LocalBusiness` schema with all available fields: phone, address, postal code, hours, email, languages, ratings, halal status
+- Open Graph and Twitter Card meta tags on every page (with image dimensions)
+- `hreflang` tags (`en-CA` + `x-default`) on all pages for geo-targeting
+- `geo.region` and `geo.placename` meta tags for local SEO
+- Extended robots meta: `max-snippet:-1, max-video-preview:-1`
 - Canonical URLs, robots.txt, XML sitemap
-- Optimized for Google, Bing, and AI search (ChatGPT, Perplexity, etc.)
+- `llms.txt` and `llms-full.txt` for AI/LLM discoverability (ChatGPT, Claude, Perplexity)
+- `humans.txt` and `.well-known/security.txt`
+- robots.txt welcomes all major AI crawlers (GPTBot, Claude, Perplexity, etc.)
+- URL validation prevents broken links from non-URL data in website fields
+- HTML entity escaping prevents schema/meta tag corruption
+- Meta descriptions truncated at word boundaries (never mid-word)
 - Detailed documentation in `SEO_OPTIMIZATION.md`
 
 ### UI/UX
@@ -98,10 +107,16 @@ rexdalejobs/
 ├── CNAME                          # Custom domain: rexdalejobs.com
 ├── manifest.json                  # PWA web app manifest
 ├── sw.js                          # Service worker (offline support, caching)
-├── robots.txt                     # Search engine crawl rules
-├── sitemap.xml                    # 838 URLs for search engines
+├── robots.txt                     # Search engine crawl rules (welcomes all AI crawlers)
+├── sitemap.xml                    # 839 URLs for search engines (zero duplicates)
 ├── favicon.svg                    # Site favicon
 ├── offline.html                   # Offline fallback page
+│
+├── llms.txt                       # AI/LLM summary (for ChatGPT, Claude, Perplexity discoverability)
+├── llms-full.txt                  # AI/LLM full documentation (complete site context for AI systems)
+├── humans.txt                     # humans.txt standard file
+├── .well-known/
+│   └── security.txt               # Security contact info (RFC 9116)
 │
 ├── css/
 │   ├── style.css                  # Main stylesheet (~3100 lines) - design system, components, responsive
@@ -115,7 +130,6 @@ rexdalejobs/
 │   └── businesses.json            # All 803 businesses with categories, contact info, services, neighborhoods
 │
 ├── businesses/                    # 803 individual business HTML pages (generated)
-│   ├── _template.html             # Template reference
 │   ├── master-maid-rexdale.html   # Example: {slug}-{neighborhood}.html
 │   └── ...                        # 803 total pages
 │
@@ -136,8 +150,8 @@ rexdalejobs/
 │   ├── Toronto_Business_Directory.xlsx
 │   └── *.pdf                      # 10 research PDFs covering different business sectors
 │
-├── generate-business-pages.js     # Node.js script to generate /businesses/ pages from JSON
-├── generate-business-sitemap.js   # Node.js script to generate sitemap.xml
+├── generate-business-pages.js     # Node.js generator: reads JSON, outputs 803 pages with full SEO
+├── generate-business-sitemap.js   # Node.js generator: outputs sitemap.xml with dedup slug handling
 │
 ├── SEO_OPTIMIZATION.md            # Detailed SEO/AEO strategy documentation
 ├── GENERATION_REPORT.txt          # Business page generation report
@@ -194,10 +208,15 @@ All business data lives in `data/businesses.json`. The structure:
 7. Favorites are persisted in `localStorage`
 
 ### Business Detail Pages
-- Generated once from `data/businesses.json` using `generate-business-pages.js`
-- Each page is standalone HTML with embedded CSS (no external stylesheet dependency)
-- Includes `LocalBusiness` schema.org structured data for SEO
-- Naming convention: `{slugified-name}-{neighborhood}.html`
+- Generated from `data/businesses.json` using `generate-business-pages.js`
+- Each page includes all available business data: phone (with `tel:` links), address, postal code, hours, email, languages, rating, halal status
+- Full `LocalBusiness` schema.org structured data with `@id`, `telephone`, `streetAddress`, `postalCode`, `openingHours`, `email`, `availableLanguage`, `aggregateRating`
+- URL validation filters out non-URL data in the `website` field (prevents broken links)
+- HTML entity escaping prevents schema corruption from special characters
+- Meta descriptions truncated at word boundaries, never mid-word
+- `hreflang` tags for Canadian English geo-targeting
+- Site-wide header navigation and consistent footer links
+- Naming convention: `{slugified-name}-{neighborhood}.html` with numeric suffix for duplicates
 
 ### Job Pages
 - Hand-crafted HTML landing pages targeting specific job search intents
@@ -331,14 +350,20 @@ This project was designed to be replicable. Here is a step-by-step blueprint for
    | File | What to change |
    |---|---|
    | `CNAME` | Your custom domain |
-   | `index.html` | All city references, meta tags, hero text, community stats, neighborhood cards, cuisine tags, about text, contact info, structured data |
-   | `manifest.json` | App name, description, start_url, scope |
-   | `robots.txt` | Sitemap URL |
+   | `index.html` | All city references, meta tags, hero text, community stats, neighborhood cards, cuisine tags, about text, contact info, structured data, `geo.placename` |
+   | `manifest.json` | App name, description |
+   | `robots.txt` | Sitemap URL, Host URL |
+   | `llms.txt` | All content - rewrite for your city/neighborhood |
+   | `llms-full.txt` | All content - rewrite with your business data, job categories, geographic context |
+   | `humans.txt` | Team info, location |
+   | `.well-known/security.txt` | Contact email, canonical URL |
    | `favicon.svg` | Your branding |
    | `icons/icon.svg` | Your branding |
    | `js/app.js` | Category icon mapping (line ~37), any city-specific logic |
    | `js/seo-optimization.js` | Organization schema, URLs, area served |
    | `css/style.css` | Brand colors in CSS custom properties (`:root` section, lines 1-60) |
+   | `generate-business-pages.js` | Domain URL in canonical/schema (search for `rexdalejobs.com`), area served names |
+   | `generate-business-sitemap.js` | Domain URL, job page list |
 
 ### Phase 3: Build Your Data (1-2 days)
 
@@ -418,12 +443,83 @@ The `/jobs/` section requires the most original content work. For each job page:
 
 ---
 
+## SEO & AEO Implementation Guide
+
+This section documents every SEO/AEO measure implemented on the site, serving as both a reference and a checklist when replicating for another city.
+
+### Checklist: What Every Page Must Have
+
+| Element | Homepage | Job Pages | Business Pages |
+|---|---|---|---|
+| `lang="en-CA"` on `<html>` | Yes | Yes | Yes |
+| `<meta name="description">` under 155 chars | Yes | Needed* | Yes |
+| `<meta name="robots">` with `max-snippet:-1` | Yes | Needed* | Yes |
+| `<meta name="geo.region">` and `geo.placename` | Yes | Needed* | Yes |
+| `og:type`, `og:url`, `og:title`, `og:description` | Yes | Yes | Yes |
+| `og:image` with width/height | Yes | Yes | Yes |
+| `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` | Yes | Yes | Yes |
+| `<link rel="canonical">` | Yes | Yes | Yes |
+| `<link rel="alternate" hreflang="en-CA">` | Yes | Needed* | Yes |
+| `<link rel="alternate" hreflang="x-default">` | Yes | Needed* | Yes |
+| JSON-LD `BreadcrumbList` | Yes | Yes | Yes |
+| JSON-LD `FAQPage` | Yes | Yes | N/A |
+| JSON-LD `LocalBusiness` | N/A | N/A | Yes |
+| JSON-LD `WebSite` + `Organization` | Yes | N/A | N/A |
+| Single `<h1>` per page | Yes | Yes | Yes |
+| Skip-to-content link | Yes | Needed* | Yes |
+| `<footer role="contentinfo">` | Yes | Needed* | Yes |
+| Consistent header/footer navigation | Yes | Partial* | Yes |
+
+*Items marked "Needed" on job pages are present on some but not all 35 pages - standardization is the remaining task.
+
+### Discovery Files
+
+| File | Purpose | Standard |
+|---|---|---|
+| `robots.txt` | Search engine crawl rules; welcomes AI crawlers by name | [robotstxt.org](https://www.robotstxt.org/) |
+| `sitemap.xml` | 839 URLs with priorities and change frequencies | [sitemaps.org](https://www.sitemaps.org/) |
+| `llms.txt` | Concise site summary for AI/LLM systems | [llmstxt.org](https://llmstxt.org/) |
+| `llms-full.txt` | Complete site documentation for AI systems | [llmstxt.org](https://llmstxt.org/) |
+| `humans.txt` | Team and technology credits | [humanstxt.org](https://humanstxt.org/) |
+| `.well-known/security.txt` | Security vulnerability reporting contact | [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116) |
+| `manifest.json` | PWA manifest for installability | [W3C Web App Manifest](https://www.w3.org/TR/appmanifest/) |
+
+### Structured Data Types Used
+
+| Schema Type | Where | Rich Result |
+|---|---|---|
+| `WebSite` + `SearchAction` | Homepage | Google Sitelinks Search Box |
+| `Organization` | Homepage (via seo-optimization.js) | Knowledge Panel |
+| `ItemList` | Homepage, Jobs hub | Carousel in search results |
+| `FAQPage` | Homepage, all 35 job pages | FAQ rich snippets |
+| `BreadcrumbList` | All pages | Breadcrumb trail in search results |
+| `LocalBusiness` | All 803 business pages | Local business rich snippets, Google Maps |
+
+### Business Page Generator SEO Features
+
+The `generate-business-pages.js` script includes these SEO safeguards:
+
+1. **URL validation** - Filters out non-URL strings in the `website` field (e.g., "English", "Full service") that would create broken links
+2. **HTML entity escaping** - All business data is escaped before insertion into HTML attributes and content
+3. **JSON-LD safety** - Schema objects are built as JavaScript objects and serialized with `JSON.stringify()`, preventing JSON syntax errors
+4. **Word-boundary truncation** - Meta descriptions are truncated at the last complete word before 155 characters
+5. **Slug deduplication** - Duplicate business names in the same neighborhood get `-1`, `-2` suffixes (matching between page generator and sitemap generator)
+6. **All data fields used** - Phone, address, postal code, hours, email, languages, rating, halal status, and notes are all rendered on pages and included in structured data
+7. **a/an grammar** - Correctly uses "a" or "an" before category names based on the first letter
+8. **Category normalization** - ALL CAPS categories are converted to Title Case
+9. **Dynamic copyright year** - Footer uses the current year, not a hardcoded value
+
+---
+
 ## Suggested Next Steps
 
 ### High Priority
-- [ ] **Set up Google Search Console** - submit sitemap, monitor indexation of all 838 URLs
+- [ ] **Set up Google Search Console** - submit sitemap (839 URLs), monitor indexation
 - [ ] **Set up Google Analytics or Plausible** - track traffic, popular pages, search queries
 - [ ] **Validate structured data** - run all page types through Google Rich Results Test
+- [ ] **Standardize job page footers/headers** - 25 of 35 job pages lack the site-wide `<header>` nav; 9 pages are missing homepage links; footer links vary across pages
+- [ ] **Trim job page meta descriptions** - all 35 exceed 155 chars (some reach 263 chars)
+- [ ] **Add hreflang tags to job pages** - currently missing from all 35 job pages
 - [ ] **Audit business data accuracy** - verify phone numbers, websites, and hours are current
 - [ ] **Add a "Last verified" date** to business listings to build user trust
 
@@ -463,16 +559,21 @@ The `/jobs/` section requires the most original content work. For each job page:
 
 ## Key Files Reference
 
-| File | Lines | Purpose |
-|---|---|---|
-| `index.html` | 1,181 | Homepage with all sections: hero/search, featured carousel, neighborhoods, jobs preview, category browser, full directory with filters, community stats, about, newsletter, contact, modals |
-| `js/app.js` | 1,653 | Core application: state management, search, filtering, sorting, pagination, favorites, carousel, dark mode, modals, toast notifications, form handling, voice search |
-| `css/style.css` | 3,099 | Full design system: CSS variables for theming, all component styles, responsive breakpoints, dark mode, animations |
-| `css/jobs.css` | 1,166 | Styles for job landing pages (hero, content layout, FAQ, cards) |
-| `data/businesses.json` | 6,757 | All 803 businesses with 201 categories across 7 neighborhoods |
-| `sw.js` | 186 | Service worker: precaching, stale-while-revalidate, offline fallback |
-| `js/seo-optimization.js` | 149 | Dynamic SEO: schema injection, canonical URLs, resource hints |
-| `generate-business-pages.js` | ~300 | Node.js generator: reads JSON, outputs 803 HTML pages with SEO markup |
+| File | Purpose |
+|---|---|
+| `index.html` | Homepage: hero/search, featured carousel, neighborhoods, jobs preview, category browser, full directory with filters, community stats, about, newsletter, contact, modals |
+| `js/app.js` | Core application: state management, search, filtering, sorting, pagination, favorites, carousel, dark mode, modals, toast notifications, form handling, voice search |
+| `css/style.css` | Full design system: CSS variables for theming, all component styles, responsive breakpoints, dark mode, animations |
+| `css/jobs.css` | Styles for job landing pages (hero, content layout, FAQ, cards) |
+| `data/businesses.json` | All 803 businesses with 201 categories across 7 neighborhoods |
+| `sw.js` | Service worker: precaching, stale-while-revalidate, offline fallback |
+| `js/seo-optimization.js` | Dynamic SEO: schema injection, canonical URLs, resource hints |
+| `generate-business-pages.js` | Node.js generator: reads JSON, outputs 803 pages with full LocalBusiness schema, URL validation, HTML escaping, slug dedup |
+| `generate-business-sitemap.js` | Node.js generator: outputs sitemap.xml with 839 unique URLs, matching slug dedup logic |
+| `llms.txt` | AI/LLM concise summary for discoverability by ChatGPT, Claude, Perplexity |
+| `llms-full.txt` | Complete site documentation for AI systems (business categories, job pages, FAQs, geographic context) |
+| `robots.txt` | Crawl rules welcoming all major search engines and AI crawlers |
+| `manifest.json` | PWA manifest: app name, icons, shortcuts, installability |
 
 ---
 
