@@ -1,14 +1,15 @@
 {
-  "name": "Rexdale Business Directory",
-  "short_name": "Rexdale Biz",
-  "description": "Discover 800+ local businesses in Rexdale, Etobicoke. Find restaurants, healthcare, automotive, retail, and professional services in your neighborhood.",
-  "start_url": "/rexdalejobs/",
-  "scope": "/rexdalejobs/",
+  "name": "Rexdale Jobs & Business Directory",
+  "short_name": "RexdaleJobs",
+  "description": "Find jobs hiring now and discover 800+ local businesses in Rexdale, Etobicoke & Toronto. Entry-level, warehouse, airport & more — no experience needed.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
   "orientation": "portrait-primary",
-  "categories": ["business", "local", "directory", "shopping"],
+  "categories": ["business", "local", "directory", "jobs", "employment"],
   "lang": "en-CA",
   "dir": "ltr",
   "icons": [
@@ -27,41 +28,22 @@
   ],
   "shortcuts": [
     {
-      "name": "Browse Directory",
-      "short_name": "Directory",
-      "description": "Browse all businesses",
-      "url": "/rexdalejobs/#directory",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+      "name": "Browse Jobs",
+      "short_name": "Jobs",
+      "description": "Browse job categories and career guides",
+      "url": "/jobs/"
     },
     {
-      "name": "View Categories",
-      "short_name": "Categories",
-      "description": "Browse by category",
-      "url": "/rexdalejobs/#categories",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
+      "name": "Business Directory",
+      "short_name": "Directory",
+      "description": "Browse all 800+ businesses",
+      "url": "/#directory"
     },
     {
       "name": "My Favorites",
       "short_name": "Favorites",
       "description": "View saved businesses",
-      "url": "/rexdalejobs/?favorites=true",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "screenshots/desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Desktop view of Rexdale Business Directory"
-    },
-    {
-      "src": "screenshots/mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Mobile view of Rexdale Business Directory"
+      "url": "/?favorites=true"
     }
   ],
   "related_applications": [],

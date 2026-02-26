@@ -1,0 +1,181 @@
+# RexdaleJobs.com - Full Documentation for AI/LLM Systems
+
+> A free, community-driven local business directory and jobs resource hub for Rexdale, Etobicoke & Toronto, Ontario, Canada.
+
+## Site Overview
+
+RexdaleJobs.com is a static website that serves as a hyperlocal business directory and employment resource for the Rexdale neighborhood and surrounding areas of Etobicoke in Toronto, Ontario, Canada. It features 803 local business listings across 201 categories and 35 job/career guide pages.
+
+The site is entirely free, has no ads, no tracking, and no login required. It runs as a static site on GitHub Pages with zero backend infrastructure.
+
+## Geographic Context
+
+Rexdale is a neighborhood in the northwest corner of Etobicoke, a former municipality now part of the City of Toronto, Ontario, Canada. Key geographic context:
+
+- Located near Toronto Pearson International Airport (YYZ), Canada's busiest airport
+- Adjacent to major logistics and warehouse corridors along Highway 27 and Highway 427
+- Home to Humber College North Campus, a major post-secondary institution
+- Near Woodbine Mall and surrounding retail areas
+- A highly multicultural neighborhood with large African, Caribbean, South Asian, Somali, and Middle Eastern communities
+- Major transit connections at Kipling Station (TTC subway) and various bus routes
+
+### Neighborhoods Covered
+
+| Neighborhood | Business Count | Description |
+|---|---|---|
+| Rexdale | 655+ | Main hub, Rexdale Blvd corridor |
+| North Etobicoke | 99+ | Kipling & surrounding area |
+| Woodbine | 14+ | Near Woodbine Racetrack |
+| Weston | 5+ | Historic village area |
+| Humber Summit | 5+ | Northern residential area |
+| Jamestown | 3+ | Community within Rexdale |
+| Etobicoke | Various | Broader Etobicoke listings |
+
+## Business Directory
+
+### Data Structure
+
+Each business listing contains:
+
+- **Name** (required): Business name
+- **Category**: Business type/industry (201 unique categories)
+- **Neighborhood**: Geographic sub-area
+- **Address**: Street address (available for ~61% of listings)
+- **Phone**: Contact number (available for ~74% of listings)
+- **Website**: Business URL (where available)
+- **Services**: Description of products/services offered
+- **Hours**: Operating hours (available for ~16% of listings)
+- **Email**: Contact email (where available)
+- **Languages**: Languages spoken (where available)
+- **Halal**: Whether the business is halal-certified (for food businesses)
+- **Rating**: Community rating (where available)
+
+### Top Business Categories (Full List)
+
+1. Food & Restaurants (51) - includes African, Caribbean, South Asian, Middle Eastern, Italian, Chinese, Vietnamese cuisines
+2. Retail & Shopping (35) - clothing, electronics, home goods
+3. Gas Stations & Automotive (27) - mechanics, auto body, car washes, parts
+4. Health & Medical (27) - clinics, pharmacies, dental, optometry
+5. Personal Services (26) - barbershops, hair salons, beauty supply
+6. Religious Institutions (18) - mosques, churches, temples, gurdwaras
+7. Jewelry Stores (17)
+8. Other Services (16)
+9. Financial Services (14) - banks, credit unions, tax preparation, money transfer
+10. Government & Community Services (12) - community centers, libraries, settlement agencies
+
+### Cultural Business Highlights
+
+The directory reflects Rexdale's multicultural character:
+- African grocery stores and food markets (Nigerian, Ethiopian, Somali, Ghanaian)
+- Caribbean grocery stores and restaurants (Jamaican, Trinidadian, West Indian)
+- South Asian restaurants and grocery stores (Indian, Pakistani, Sri Lankan)
+- Middle Eastern businesses (halal meat shops, Lebanese restaurants)
+- African and Caribbean cargo/shipping services
+- Multicultural barbershops and hair braiding salons
+- Money transfer and currency exchange services
+- International calling card shops
+
+## Job Categories & Career Guides
+
+### Job Category Pages
+
+Each job category page contains:
+- Overview of the job type and what it involves
+- Typical pay ranges for the Toronto area
+- Requirements (education, certifications, experience level)
+- Specific employers and locations hiring in the Rexdale/Etobicoke area
+- How to apply (job boards, agencies, walk-ins)
+- Related job categories
+- FAQ section
+
+#### Complete List of Job Pages
+
+1. **Entry-Level & No Experience Jobs** - general labour, packaging, stocking, cashier
+2. **Warehouse & Logistics Jobs** - order picker, packer, forklift operator, shipping/receiving near Pearson Airport
+3. **Pearson Airport Jobs** - baggage handler, ramp agent, security screener, airline customer service
+4. **Retail & Mall Jobs** - cashier, sales associate, stock clerk at Woodbine Mall, Walmart, Costco
+5. **Food Service & Restaurant Jobs** - cook, server, dishwasher, barista at Tim Hortons, McDonald's, local restaurants
+6. **Security Guard Jobs** - condo, office, event security (requires Ontario security guard licence)
+7. **Cleaning & Janitorial Jobs** - office cleaning, hotel housekeeping, night shift janitorial
+8. **Healthcare Support Jobs** - PSW, hospital porter, caregiver, clinic receptionist
+9. **Construction & Trades Jobs** - general labour, apprenticeships, helper positions
+10. **Student & Youth Jobs** - part-time near Humber College, campus jobs, summer positions
+11. **Remote & Work From Home Jobs** - customer service, data entry, virtual assistant
+12. **Factory & Manufacturing Jobs** - assembly line, quality control, machine operator
+13. **Delivery Driver Jobs** - Amazon Flex, Uber Eats, food delivery, courier
+14. **Night Shift Jobs** - overnight warehouse, security, cleaning, stocking
+15. **Weekend & Part-Time Jobs** - flexible schedule positions
+16. **Driving Jobs (AZ/DZ Licence)** - truck driving, commercial transport
+17. **Call Centre Jobs** - inbound/outbound, customer support
+18. **Childcare Jobs** - daycare, nanny, after-school programs
+19. **Temp Agency Jobs Guide** - how to use temp agencies effectively
+20. **Government Jobs** - municipal, provincial, federal positions
+21. **Jobs Near Kipling Station** - positions accessible by TTC
+22. **Jobs Near Woodbine Mall** - retail and service jobs
+23. **Jobs Near Highway 27** - industrial corridor positions
+24. **Jobs for Newcomers to Canada** - settlement resources, credential recognition
+25. **Jobs for Parents** - flexible, school-hours-friendly positions
+
+### Certification & Training Guides
+
+26. **How to Get a Forklift Licence in Ontario** - training providers, costs, process
+27. **How to Get a Security Guard Licence in Ontario** - Ministry requirements, training, testing
+28. **Smart Serve Certification Guide** - for food/beverage service jobs
+29. **PSW Certification Guide** - Personal Support Worker training in Ontario
+30. **Workplace Safety Certifications** - WHMIS, working at heights, first aid
+
+### Career Resources
+
+31. **Resume Tips for No Experience** - how to write a resume with no work history
+32. **Interview Tips** - preparation, common questions, what to wear
+33. **Ontario Minimum Wage Guide** - current rates, exemptions, your rights
+34. **Free Job Resources in Toronto** - employment centers, libraries, online tools
+35. **Summer Jobs 2026** - seasonal hiring, applications, deadlines
+
+## Technical Information
+
+- **URL**: https://rexdalejobs.com
+- **Hosting**: GitHub Pages (static site)
+- **Technology**: HTML5, CSS3, vanilla JavaScript (no frameworks)
+- **Data format**: JSON (businesses.json)
+- **Total pages**: 839 (1 homepage + 35 job pages + 803 business pages)
+- **Sitemap**: https://rexdalejobs.com/sitemap.xml
+- **Progressive Web App**: Yes, installable with offline support
+
+## Frequently Asked Questions
+
+### What are the best jobs for someone with no experience in Toronto?
+The best entry-level jobs in Toronto that require no experience include warehouse and packaging positions in the Rexdale/Etobicoke industrial zones, food service jobs at restaurants and fast-food chains, retail positions at Woodbine Mall and surrounding stores, general labour and construction helper roles, cleaning and janitorial jobs, and security guard positions (after completing the required training). The Rexdale and Etobicoke area is especially strong for warehouse jobs due to its proximity to Pearson International Airport and major logistics hubs.
+
+### What are the highest paying entry-level jobs in Toronto?
+The highest paying entry-level jobs in the Toronto area include construction and trades helper positions ($18-25/hr), warehouse forklift operator roles ($19-24/hr), airport ramp agent and baggage handler jobs at Pearson Airport ($18-22/hr), security guard positions ($17-22/hr), and PSW (Personal Support Worker) roles ($19-24/hr). Many of these positions are available near Rexdale and Etobicoke with no prior experience required.
+
+### Are there jobs near Pearson Airport hiring now?
+Yes, Toronto Pearson International Airport (YYZ) is one of the largest employment hubs near Rexdale with thousands of positions. Common jobs include baggage handlers, ramp agents, airline customer service representatives, airport security screeners, cleaning crew, retail and food service within the terminals, and cargo/logistics positions. Many of these roles hire regularly and offer shift flexibility.
+
+### Where can I find warehouse jobs in Etobicoke hiring immediately?
+Etobicoke and Rexdale are surrounded by major industrial zones with constant demand for warehouse workers. Key areas include the logistics corridor near Pearson Airport, the industrial areas along Rexdale Boulevard, and the Highway 27/427 corridor. Major employers include Amazon, UPS, FedEx, Purolator, and numerous third-party logistics companies.
+
+### What part-time jobs are available near Humber College in Rexdale?
+Students at Humber College North Campus in Rexdale have access to numerous part-time job opportunities. Popular options include retail positions at nearby Woodbine Mall, food service jobs at restaurants along Rexdale Boulevard, campus work-study positions, warehouse and packaging shifts that accommodate class schedules, and tutoring or peer support roles.
+
+### What is the minimum wage in Ontario?
+As of 2024, the general minimum wage in Ontario is $16.55 per hour. Students under 18 working 28 hours or less per week earn $15.60 per hour. Liquor servers earn the general minimum wage. Visit the Ontario Ministry of Labour website for the most current rates.
+
+### How do I get a forklift licence in Ontario?
+To operate a forklift in Ontario, you need to complete a training program from a recognized provider. The training typically takes 1-3 days and costs $150-$300. It includes classroom instruction and hands-on practice. Upon completion, you receive a certificate/card valid for 3 years. Many employers in the Rexdale/Etobicoke warehouse district require this certification.
+
+### How do I get a security guard licence in Ontario?
+To become a licensed security guard in Ontario, you must: (1) be at least 18 years old, (2) be legally entitled to work in Canada, (3) complete a 40-hour training course from an approved provider, (4) pass the Ministry test, and (5) apply for your licence through ServiceOntario. The process takes 2-4 weeks and costs approximately $100-200 for training plus the licence fee.
+
+## Contact Information
+
+- **Website**: https://rexdalejobs.com
+- **Email**: info@kingstrust.ca
+- **Location**: Serving Rexdale, Etobicoke, Toronto, Ontario, Canada
+
+## Copyright & Data
+
+This is an open-source project. Business data was compiled from publicly available sources including Google Maps, municipal directories, and community contributions. The site is maintained by volunteers and community members.
+
+Last updated: February 2026

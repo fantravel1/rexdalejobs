@@ -77,7 +77,7 @@
     function enhancePageMetadata() {
         // Ensure language attribute
         if (!document.documentElement.lang) {
-            document.documentElement.lang = 'en';
+            document.documentElement.lang = 'en-CA';
         }
 
         // Ensure viewport is set
